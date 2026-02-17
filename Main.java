@@ -1,4 +1,4 @@
-package SLIST;
+import SLIST.SLinkedList;
 
 public class Main {
     public static void main(String[] args) {
