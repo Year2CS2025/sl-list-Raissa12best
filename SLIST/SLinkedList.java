@@ -134,6 +134,32 @@ public class SLinkedList<T> implements Iterable<T>{
         }
         return tail.data;
     }
+     public void remove(T e) {
+    if (head == null) return;
+
+    if (head.data.equals(e)) {
+        head = head.next;
+        size--;
+        if (head == null) tail = null;
+        return;
+    }
+
+    Node<T> current = head;
+
+    while (current.next != null) {
+        if (current.next.data.equals(e)) {
+            current.next = current.next.next;
+            size--;
+            if (current.next == null) {
+                tail = current;
+            }
+            return;
+        }
+        current = current.next;
+    }
+}
+
+
     public void reverse(){
       Node<T> prev = null;
     Node<T> current = head;
@@ -190,5 +216,8 @@ public boolean equals(Object obj) {
 
     return true;
 }
+
+
+
 
 }
